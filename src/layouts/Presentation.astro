@@ -1,0 +1,39 @@
+---
+import '../styles/global.css'
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="generator" content={Astro.generator} />
+		<title>Evolution of the JS toolchain: from jsmin to vite</title>
+	</head>
+	<body>
+    <div class="reveal">
+      <div class="slides">
+	    	<slot />
+      </div>
+    </div>
+	</body>
+</html>
+
+<script>
+  // @ts-ignore
+  import Reveal from 'reveal.js';
+  // @ts-ignore
+  import Markdown from 'reveal.js/plugin/markdown/markdown.esm.js';
+
+  let deck = new Reveal({
+    plugins: [Markdown],
+  });
+
+  deck.initialize({
+    progress: true,
+    hash: true,
+    help: false,
+    transition: 'fade',
+  });
+</script>
