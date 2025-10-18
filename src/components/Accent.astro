@@ -1,0 +1,9 @@
+---
+const { variant } = Astro.props;
+
+const styles = variant == 'secondary'
+  ? 'font-bold text-shadow-purple-700 text-shadow-lg'
+  : 'font-bold text-shadow-lime-700 text-shadow-lg';
+---
+
+<code class={styles}><slot /></code>

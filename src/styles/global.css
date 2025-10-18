@@ -1,6 +1,8 @@
-@import "tailwindcss";
 @import '@fontsource/ibm-plex-mono';
 @import '@fontsource-variable/ibm-plex-sans';
+
+@import "tailwindcss";
+
 @import 'reveal.js/dist/reveal';
 @import 'reveal.js/dist/theme/night';
 
@@ -12,4 +14,13 @@
 :root {
   --r-main-font: 'IBM Plex Sans Variable', sans-serif;
   --r-code-font: 'IBM Plex Mono', monospace;
+  --r-heading-font: 'IBM Plex Sans Variable', sans-serif;
+  --r-heading-font-weight: bold;
+
+  --r-main-font-size: 1.5em;
+  --r-heading1-size: 2.5em;
+  --r-heading2-size: 2em;
+  --r-heading3-size: 1.75em;
+
+  --r-link-color: #63b3ed;
 }

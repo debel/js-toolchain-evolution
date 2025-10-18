@@ -1,8 +1,320 @@
 ---
-import Content from '../components/Content.astro';
 import Presentation from '../layouts/Presentation.astro';
+
+import Accent from '../components/Accent.astro';
+import Anno, { fancyGradient } from '../components/Anno.astro';
 ---
 
 <Presentation>
-  <Content />
+  <section id="hello">
+    <h1>Evolution of the <Accent>JS</Accent> toolchain</h1>
+    <p class="text-4xl text-right pr-12">from <Accent>jsmin</Accent> to <Accent variant='secondary'>vite</Accent></p>
+  </section>
+
+  <section id="about-me">
+  <p>I am <Accent>@debelbot</Accent></p>
+  </section>
+
+  <section id="what-is-the-toolschain">
+    <h2>What is the JS toolchain?</h2>
+  </section>
+
+  <section id="the-toolchain">
+    <h2>Tools for:</h2>
+    <ul>
+      <li>Package management</li>
+      <li>Local development</li>
+      <li>Improving code quality</li>
+      <li>Building & bundling</li>
+      <li>Optimization</li>
+      <li>Running task & deployment</li>
+    </ul>
+  </section>
+
+  <section id="let-there-be-tools">
+    <h2>And God said <span class="italic">"let there be tools!"</span></h2>
+  </section>
+
+  <section id="let-there-be-tools">
+    <h2 class="decoration-double line-through decoration-4 decoration-red-500/75">
+      And God said <span class="italic">"let there be tools!"</span>
+    </h2>
+  </section>
+
+  <section id="let-there-be-tools">
+In reality,
+    <h2>
+      the tools we take for granted today are the result of years of <Accent variant="secondary">feverish</Accent> evolution
+    </h2>
+  </section>
+  <section id="dawn-of-time">
+    <Anno year="1991-2000">The big (web) bang</Anno>
+  </section>
+
+  <section id="in-the-beginning">
+    <Anno year="1991">humble beginnings</Anno>
+    <p>static html only </p>
+
+    <p class="text-2xl">There was no need for a <span class="italic">"build step"</span>
+    and deployment mostly happend through FTP..😱</p>
+  </section>
+
+  <section id="the-birth-of-js">
+    <Anno year="1995">The birth of JavaScript</Anno>
+    crazy 90s web design
+  </section>
+
+  <section id="enter-the-professionals">
+    <p>As the web grew in popularity,
+    established software developers
+    come in with their familiar tools:</p>
+    <ul>
+      <li>make</li>
+      <li>Apache Ant</li>
+      <li>Ruby Rake</li>
+      <li>custom shell / perl scripts</li>
+    </ul>
+  </section>
+
+  <section id="first-debugger">
+    <Anno year="1998">Microsoft Script Debugger</Anno>
+    I don't always debug, but when I do - I use <Accent>alert()</Accent>
+  </section>
+
+  <section id="first-wave">
+    <Anno year="2001-2010">stone, bronze and iron</Anno>
+  </section>
+
+  <section id="the-godfather-of-js">
+  <Anno year="2002">The good parts</Anno>
+    <p>Doug Crockford writes his famous book and creates jslint and jsmin.</p>
+
+    <p>JavaScript starts to be seen as a real language</p>
+  </section>
+
+  <section id="firebug">
+    <Anno year="2006">Firebug</Anno>
+    The best (non) IDE ever made
+  </section>
+
+  <section id="chrome">
+    <Anno year="2009">Chome & v8</Anno>
+    JavaScript gets a new, faster engine!
+  </section>
+
+  <section id="node-js">
+  <Anno year="2009">node.js</Anno>
+    Ryan Dahl publishes the definitive server side runtime for javascript
+  </section>
+
+  <section id="node-js">
+  <Anno year="2009">Source maps</Anno>
+    Allow us to debug minified code
+  </section>
+
+  <section id="npm">
+    <Anno year="2010">npm</Anno>
+    enabling side-chain attacks since before it was cool
+  </section>
+
+  <section id="cambrian-explosion">
+    <Anno year="2011-2018">industrial revolution</Anno>
+    of js tools
+  </section>
+
+  <section id="jasmine">
+    <Anno year="2010">Jasmine</Anno>
+    <p>The first JS testing framework</p>
+  </section>
+
+  <section id="browserify">
+    <Anno year="2011">Browserify</Anno>
+    The first pure JS bundler
+  </section>
+
+  <section id="need-for-speed">
+    <Anno year="2011">Emscripten</Anno>
+    <p>laying the groundwork for wasm</p>
+  </section>
+
+  <section id="js-linux">
+    <Anno year="2011">JSLinux</Anno>
+    <p>the birth of in-browser VMs</p>
+  </section>
+
+  <section id="grunt">
+    <Anno year="2012">Grunt</Anno>
+    The first purpose built js task runner
+  </section>
+
+  <section id="webpack">
+    <Anno year="2012">webpack</Anno>
+    still popular today
+  </section>
+
+  <section id="typescript">
+    <Anno year="2012">typescript</Anno>
+    the most helpful but annoying linter
+  </section>
+
+  <section id="gulp">
+    <Anno year="2013">gulp</Anno>
+    A task runner with a better API
+  </section>
+
+  <section id="eslint">
+    <Anno year="2013">eslint</Anno>
+    <p>One linter to rule them all</p>
+    <aside class="italic">(just admit you imported the airbnb config without even thinking..)</aside>
+  </section>
+
+  <section id="desktop-js">
+    <Anno year="2013">Electron</Anno>
+    Now your desktop app can be slow and bloated too!
+  </section>
+
+  <section id="babel">
+    <Anno year="2014">Babel</Anno>
+    With the rapid evolution of the language
+    came the need for transpilation
+    opening the gates for new syntax (e.g. JSX)
+  </section>
+
+  <section id="the-rise-of-serverless">
+    <Anno year="2014">AWS Lambda</Anno>
+    the rise of serverless
+    (not directly related to dev-tools but significant for its impact on them)
+  </section>
+
+  <section id="unpkg">
+    <Anno year="2015">unpkg</Anno>
+    cdn for the masses
+  </section>
+
+  <section id="rollup">
+    <Anno year="2015">rollup</Anno>
+    a bundler made for speed
+  </section>
+
+  <section id="yarn">
+    <Anno year="2015">yarn</Anno>
+    move aside npm there is a faster cowboy in town
+    (now with lockfiles, so you can actually deploy what you intented)
+  </section>
+
+  <section id="next-js">
+    <Anno year="2016">next.js</Anno>
+    and the rise of the meta-frameworks
+  </section>
+
+  <section id="lsp">
+    <Anno year="2016">Language Servers Unite!</Anno>
+    Microsoft releases the first ever LSP.
+    It is for typescript
+  </section>
+
+  <section id="prettier">
+    <Anno year="2017">prettier</Anno>
+    Format the code automatically, so we don't argue over tabs vs spaces
+  </section>
+
+  <section id="puppeteer">
+    <Anno year="2017">puppeteer</Anno>
+    He who controls the browser, can run e2e tests with ease
+  </section>
+
+  <section id="parcel">
+    <Anno year="2017">parcel</Anno>
+    Some tools don't last, but they pave the way.
+    <ul>
+      <li>zero config needed</li>
+      <li>out-of-the-box features</li>
+      <li>focused on speed</li>
+    </ul>
+  </section>
+
+  <section id="wasm">
+    <Anno year="2017">Web Assembly</Anno>
+  </section>
+
+  <section id="lighthouse">
+    <Anno year="2018">Lighthouse</Anno>
+    So you can measure how slow your site actually is
+  </section>
+
+  <section id="modern-days">
+    <Anno year="2019-2025">modern? times</Anno>
+    the world runs on js
+  </section>
+
+  <section id="monorepos">
+    <Anno year="2019">nx</Anno>
+    Do put all your projects in one basket
+  </section>
+
+  <section id="esbuild">
+    <Anno year="2020">esbuild</Anno>
+  </section>
+
+  <section id="vite">
+    <Anno year="2020">vite</Anno>
+    Evan You has a dream - a universal build tool
+  </section>
+
+  <section id="deno">
+    <Anno year="2020">deno</Anno>
+    Ryan Dahl strikes again!
+  </section>
+
+  <section id="bun">
+    <Anno year="2021">bun</Anno>
+    FAST js runtime written in zig, running with JavaScriptCore (instead of v8)
+  </section>
+
+  <section id="biome">
+    <Anno year="2023">biome</Anno>
+    an even more opinionated formatter - thanks gofmt
+  </section>
+
+  <section id="runtime-proliferation">
+    <Anno year="2024">runtimes everywhere</Anno>
+    <p>almost all major platforms have their own js runtimes:</p>
+    <ul>
+      <li>cloudflair/workerd</li>
+      <li>amazon LLRT</li>
+    </ul>
+  </section>
+
+  <section id="compiler-proliferation">
+    <Anno year="2025">everyone has a compiler now</Anno>
+    <p>almost all major frameworks have their own compiler:</p>
+    <ul>
+      <li>svelte</li>
+      <li>react</li>
+    </ul>
+  </section>
+
+  <section id="whats-next">
+    <h2>Where is the tooling going next?</h2>
+    <p class="text-4xl fragment">I don't know.. 🤷‍♂️😅</p>
+  </section>
+
+  <section id="lessons-learned">
+    (lessons learned)
+  </section>
+
+  <section id="repeating-the-main-point">
+    <h2>
+      The tools we take for granted today
+      are the result of years of evolution
+    </h2>
+    <p>
+      the web is still evolving, against all odds -
+      walled garedens, cryto scams, ai slop, etc
+    </p>
+  </section>
+
+  <section id="thank-you">
+    <h1><span class={fancyGradient}>Thank you!</span></h1>
+  </section>
 </Presentation>
