@@ -1,9 +1,13 @@
 ---
-import Presentation from '../layouts/Presentation.astro';
+import { Image } from 'astro:assets';
 
+import Presentation from '../layouts/Presentation.astro';
 import Accent from '../components/Accent.astro';
 import Title, { fancyGradient } from '../components/Title.astro';
 import Subtitle from '../components/Subtitle.astro';
+
+import modernDev from '../assets/modern-software-mess.jpg';
+import aiJesus from '../assets/ai-jesus.jpg';
 ---
 
 <Presentation>
@@ -21,7 +25,7 @@ import Subtitle from '../components/Subtitle.astro';
   </section>
  
   <section id="meme-rube-goldberg">
-    <img src="public/modern-software-mess.jpg" />
+    <Image src={modernDev} alt="modern dev meme" />
   </section>
 
   <section id="the-toolchain">
@@ -47,7 +51,7 @@ import Subtitle from '../components/Subtitle.astro';
   </section>
 
   <section id="meme-no-ai-slop">
-    <img src="public/ai-jesus.jpg" />
+    <Image src={aiJesus} alt="no slop" />
   </section>
 
   <section id="let-there-be-tools-3">
@@ -332,6 +336,7 @@ import Subtitle from '../components/Subtitle.astro';
     <ul>
       <li>svelte</li>
       <li>react</li>
+      <li>astro</li>
     </ul>
   </section>
 
