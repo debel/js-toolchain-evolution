@@ -1,0 +1,8 @@
+---
+const { prefix } = Astro.props;
+
+export const fancyGradient = "bg-gradient-to-r from-lime-700 via-blue-400 to-purple-700 inline-block text-transparent bg-clip-text"
+
+---
+
+<h3><span class={fancyGradient}>{prefix}: </span> <slot /></h3>

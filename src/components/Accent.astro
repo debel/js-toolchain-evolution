@@ -1,9 +1,19 @@
 ---
 const { variant } = Astro.props;
 
-const styles = variant == 'secondary'
-  ? 'font-bold text-shadow-purple-700 text-shadow-lg'
-  : 'font-bold text-shadow-lime-700 text-shadow-lg';
+const styles = {
+  'primary':'font-bold text-shadow-lime-700 text-shadow-lg',
+  'secondary':'font-bold text-shadow-purple-700 text-shadow-lg',
+  'tertiary':'font-bold text-shadow-blue-700 text-shadow-lg',
+};
+
+export type Props = {
+  variant?: keyof typeof styles
+}
+
+
+const selected = styles[variant || 'primary'] || styles['primary'];
+
 ---
 
-<code class={styles}><slot /></code>
+<code class={selected}><slot /></code>

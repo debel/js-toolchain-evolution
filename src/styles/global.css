@@ -24,3 +24,13 @@
 
   --r-link-color: #63b3ed;
 }
+
+.reveal ul {
+  list-style-type: none;
+}
+
+.reveal img {
+  width: 75%;
+  max-height: 75%;
+  margin: 0 auto;
+}
