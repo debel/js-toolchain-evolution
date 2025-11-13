@@ -3,12 +3,14 @@
 
 @import 'reveal.js/dist/reveal';
 @import 'reveal.js/dist/theme/night';
+@import 'reveal.js/plugin/highlight/monokai';
 
 @import "tailwindcss";
 
 @theme {
   --font-sans: 'IBM Plex Sans Variable', sans-serif;
   --font-mono: 'IBM Plex Mono', monospace;
+  --text-shadow-xl: 7px 7px 9px rgb(0, 0, 0 / 0.25);
 }
 
 :root {
@@ -23,6 +25,8 @@
   --r-heading3-size: 1.75em;
 
   --r-link-color: #63b3ed;
+  --r-block-margin: 10px;
+  --r-heading-margin: 10px;
 }
 
 .reveal ul {
@@ -30,7 +34,12 @@
 }
 
 .reveal img {
-  width: 75%;
-  max-height: 75%;
+  /* width: 75%; */
+  max-height: 50%;
+  max-width: 75%;
   margin: 0 auto;
+}
+
+.hljs {
+  background: #27282222;
 }

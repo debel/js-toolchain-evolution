@@ -8,36 +8,58 @@ import Subtitle from '../components/Subtitle.astro';
 
 import modernDev from '../assets/modern-software-mess.jpg';
 import aiJesus from '../assets/ai-jesus.jpg';
+import www from '../assets/www-v0.png'
+import js1 from '../assets/js-v1.png'
+import vikings from '../assets/vikings.jpg'
+import debugging from '../assets/debugging.jpg'
+import goodparts from '../assets/good-parts.png'
+import jquery from '../assets/jquery.jpg'
+import firebug from '../assets/firebug.png'
+
+const nodeServer = `
+  const http = require('http');
+
+  const server = http.createServer(function (req, res) {
+    res.end('Hello, World!');
+  });
+
+  server.listen(8080);
+
+`;
 ---
 
 <Presentation>
-  <section id="hello">
+  <section id="title">
     <h1>Evolution of the <Accent>JS</Accent> toolchain</h1>
     <p class="text-4xl text-right pr-12">from <Accent>jsmin</Accent> to <Accent variant='secondary'>vite</Accent></p>
   </section>
 
   <section id="about-me">
-    <h2>I am <Accent>@debelbot</Accent></h2>
+    <h2>Hi, I am <span class={fancyGradient}>@debelbot</span></h2>
+  </section>
+
+  <section id="meme-no-ai-slop">
+    <Image src={aiJesus} alt="no slop" />
   </section>
 
   <section id="what-is-the-toolschain">
     <h2>What is a toolchain?</h2>
   </section>
  
-  <section id="meme-rube-goldberg">
-    <Image src={modernDev} alt="modern dev meme" />
-  </section>
-
   <section id="the-toolchain">
     <h2>A collection of tools for:</h2>
     <ul class="leading-relaxed">
-      <li>📦 Package management</li>
-      <li>🖥️ Local development</li>
-      <li>⚗️ Improving code quality</li>
-      <li>🔨 Building & bundling</li>
-      <li>⚙️ Optimization</li>
-      <li>🏃‍♂️ Running task & deployment</li>
+      <li><span class="text-3xl">📦</span> Package management</li>
+      <li><span class="text-3xl">🖥️</span> Local development</li>
+      <li><span class="text-3xl">⚗️</span> Improving code quality</li>
+      <li><span class="text-3xl">🔨</span> Building & bundling</li>
+      <li><span class="text-3xl">⚙️</span> Optimization</li>
+      <li><span class="text-3xl">🏃‍♂️</span> Running task & deployment</li>
     </ul>
+  </section>
+
+  <section id="meme-rube-goldberg">
+    <Image src={modernDev} alt="modern dev meme" />
   </section>
 
   <section id="let-there-be-tools-1">
@@ -50,71 +72,67 @@ import aiJesus from '../assets/ai-jesus.jpg';
     </h2>
   </section>
 
-  <section id="meme-no-ai-slop">
-    <Image src={aiJesus} alt="no slop" />
-  </section>
-
   <section id="let-there-be-tools-3">
     <p class="pb-0 mb-0">In reality,</p>
-    <h2>
+    <h3>
       the tools we take for granted today are the result of years of <Accent variant="secondary">feverish</Accent> evolution
-    </h2>
+    </h3>
   </section>
+
   <section id="dawn-of-time">
-    <Title prefix="1991-2000">The big (web) bang</Title>
+    <Title prefix="1991-2000">Dawn of the web</Title>
   </section>
 
   <section id="in-the-beginning">
     <Title prefix="1991">humble beginnings</Title>
-    <p class="italic">static html only </p>
-    <hr class="shadow-blue-700 shadow-2xl bg-blue-700" />
-    <p class="text-2xl">There was no need for a <span class="italic">"build step"</span>
-    and deployment mostly happend through FTP..😱</p>
+    <p class="text-xl">There was no need for a <span class="italic">"build step"</span> and deployment mostly happend through ..FTP 😱</p>
+    <Image src={www} alt="first web page" />
   </section>
 
   <section id="the-birth-of-js">
     <Title prefix="1995">The birth of JavaScript</Title>
-    crazy 90s web design
+    <p><Accent variant='tertiary'>Brendan Eich</Accent> created a language in 10 days (and chatGPT didn't exist, so..)</p>
+    <Image src={js1} alt="netscape, now with javascript" />
   </section>
 
   <section id="enter-the-professionals">
-    <h2>Enter the professionals</h2>
-    <p>As the web grew in popularity,
-    established software developers
-    come in with their familiar tools:</p>
-    <ul>
-      <li>make</li>
-      <li>Apache Ant</li>
-      <li>Ruby Rake</li>
-      <li>custom shell / perl scripts</li>
-    </ul>
+    <h2>Welcome the professionals</h2>
+    <p>As the web grew in popularity, established software developers come in with their familiar tools</p>
+    <Image src={vikings} alt="the old guard with their tools" />
   </section>
 
   <section id="first-debugger">
     <Title prefix="1998">Microsoft Script Debugger</Title>
-    I don't always debug, but when I do - I use <Accent>alert()</Accent>
+    <p>The first browser wars leads to a wave of dedicated tooling</p>
+    <Image src={debugging} alt="things are starting to move" />
   </section>
 
   <section id="first-wave">
     <Title prefix="2001-2010">stone, bronze and iron</Title>
-    <Subtitle>the prolifiration of framework drives the tooling</Subtitle>
+    <Subtitle>(when the JS pyramids where built)</Subtitle>
   </section>
 
   <section id="the-godfather-of-js">
-  <Title prefix="2002">The good parts</Title>
+    <Title prefix="2002">The good parts</Title>
     <p><Accent variant='tertiary'>Doug Crockford</Accent> writes his famous book and creates jslint and jsmin.</p>
-
+    <Image src={goodparts} alt="the good parts" />
     <p>JavaScript starts to be seen as a real language!</p>
+  </section>
+
+  <section id="jslint">
+    <Title>A strong foundation</Title>
+    <p>It is impossible to understate how influential the book and jslint were for the development of the language and tooling</p>
   </section>
 
   <section id="jquery">
     <Title prefix="2006">jQuery</Title>
-    Still the most popular js library ever
+    <Image src={jquery} alt="still the most popular library in the world" />
   </section>
 
   <section id="firebug">
     <Title prefix="2006">Firebug</Title>
-    The best (non) IDE ever made
+    Our modern browser dev tools are not that different from the original
+    <Image src={firebug} alt="the best frontend IDE" />
   </section>
 
   <section id="chrome">
@@ -124,10 +142,11 @@ import aiJesus from '../assets/ai-jesus.jpg';
 
   <section id="node-js">
     <Title prefix="2009">node.js</Title>
-    <Accent variant='tertiary'>Ryan Dahl</Accent> publishes the definitive server side runtime for javascript
+    <p><Accent variant='tertiary'>Ryan Dahl</Accent> publishes the definitive server side runtime for javascript</p>
+    <pre><code class="language-javascript">{nodeServer}</code></pre>
   </section>
 
-  <section id="node-js">
+  <section id="source-maps">
     <Title prefix="2009">Source maps</Title>
     Allow us to debug minified code
   </section>
@@ -149,7 +168,7 @@ import aiJesus from '../assets/ai-jesus.jpg';
 
   <section id="cambrian-explosion">
     <Title prefix="2011-2018">industrial revolution</Title>
-    of js tools
+    <Subtitle>the prolifiration of framework drives the tooling</Subtitle>
   </section>
 
   <section id="jasmine">
@@ -210,20 +229,23 @@ import aiJesus from '../assets/ai-jesus.jpg';
 
   <section id="vue">
     <Title prefix="2014">vue</Title>
-    First version of vue js
+    <p><Accent variant='tertiary'>Evan You</Accent> releases the first version of Vue.js</p>
   </section>
  
   <section id="babel">
     <Title prefix="2014">Babel</Title>
-    With the rapid evolution of the language
-    came the need for transpilation
-    opening the gates for new syntax (e.g. JSX)
+    <p>With the rapid evolution of the language came the need for transpilation opening the gates for new syntax (e.g. JSX)</p>
   </section>
 
   <section id="the-rise-of-serverless">
     <Title prefix="2014">AWS Lambda</Title>
     the rise of serverless
     (not directly related to dev-tools but significant for its impact on them)
+  </section>
+
+  <section id="jest">
+    <Title prefix="2014">Jest</Title>
+    <p>Facebook open-sources their testing framework</p>
   </section>
 
   <section id="unpkg">
@@ -233,7 +255,7 @@ import aiJesus from '../assets/ai-jesus.jpg';
 
   <section id="rollup">
     <Title prefix="2015">rollup</Title>
-    a bundler made for speed
+    <p><Accent variant='tertiary'>Rich Harris</Accent> releases rollup -a bundler made for speed and extensibility</p>
   </section>
 
   <section id="yarn">
@@ -337,6 +359,7 @@ import aiJesus from '../assets/ai-jesus.jpg';
       <li>svelte</li>
       <li>react</li>
       <li>astro</li>
+      <li>next</li>
     </ul>
   </section>
 
@@ -350,14 +373,16 @@ import aiJesus from '../assets/ai-jesus.jpg';
   </section>
 
   <section id="repeating-the-main-point">
-    <h2>
-      The tools we take for granted today
-      are the result of years of evolution
-    </h2>
-    <p>
-      the web is still evolving, against all odds -
-      walled gardens, cryto scams, ai slop, etc
-    </p>
+    <h3>
+The tools we take for granted today are the result of years of <Accent variant='primary'>evolution</Accent>
+    </h3>
+  </section>
+
+  <section id="repeating-the-main-point">
+    <h3>
+      the web is still evolving against all odds
+    </h3>
+    <p>walled gardens, cryto scams, ai slop, etc</p>
   </section>
 
   <section id="thank-you">

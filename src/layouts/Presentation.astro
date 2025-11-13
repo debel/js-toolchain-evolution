@@ -28,9 +28,10 @@ const favIconUrl = `${basePath}/favicon.svg`;
   import Reveal from 'reveal.js';
   // @ts-ignore
   import Markdown from 'reveal.js/plugin/markdown/markdown.esm.js';
+  import Highlight from 'reveal.js/plugin/highlight/highlight.esm.js';
 
   let deck = new Reveal({
-    plugins: [Markdown],
+    plugins: [Markdown, Highlight],
   });
 
   deck.initialize({
