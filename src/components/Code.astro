@@ -1,0 +1,13 @@
+---
+
+export interface Props {
+  sample: string;
+  lang?: string;
+}
+
+const { sample, lang = "javascript"} = Astro.props;
+---
+
+<pre><code class={`language-${lang}`}>
+  {sample.trim()}
+</code></pre>

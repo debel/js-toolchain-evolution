@@ -5,9 +5,9 @@ import Presentation from '../layouts/Presentation.astro';
 import Accent from '../components/Accent.astro';
 import Title, { fancyGradient } from '../components/Title.astro';
 import Subtitle from '../components/Subtitle.astro';
+import ToolSlide from '../components/ToolSlide.astro';
 
 import modernDev from '../assets/modern-software-mess.jpg';
-import aiJesus from '../assets/ai-jesus.jpg';
 import www from '../assets/www-v0.png'
 import js1 from '../assets/js-v1.png'
 import vikings from '../assets/vikings.jpg'
@@ -15,17 +15,25 @@ import debugging from '../assets/debugging.jpg'
 import goodparts from '../assets/good-parts.png'
 import jquery from '../assets/jquery.jpg'
 import firebug from '../assets/firebug.png'
+import sourceMaps from '../assets/source-maps.jpg'
 
-const nodeServer = `
-  const http = require('http');
+import nodeLogo from '../assets/nodejs.png'
+import npmLogo from '../assets/npm.svg'
+import coffeeLogo from '../assets/coffeescript.png'
+import browserifyLogo from '../assets/browserify.png'
+import jasmineLogo from '../assets/jasmine.svg'
+import gruntLogo from '../assets/grunt-logo.svg'
+import gulpLogo from '../assets/gulp-logo.svg'
+import webpackLogo from '../assets/webpack-logo.svg'
+import parcelLogo from '../assets/parcel.avif'
+import backboneLogo from '../assets/backbone.png'
+import angularLogo from '../assets/angular.png'
+import reactLogo from '../assets/react.png'
+import vueLogo from '../assets/vue.png'
+import svelteLogo from '../assets/svelte.png'
+import nextLogo from '../assets/vercel.png'
+import viteLogo from '../assets/vite.png'
 
-  const server = http.createServer(function (req, res) {
-    res.end('Hello, World!');
-  });
-
-  server.listen(8080);
-
-`;
 ---
 
 <Presentation>
@@ -38,28 +46,20 @@ const nodeServer = `
     <h2>Hi, I am <span class={fancyGradient}>@debelbot</span></h2>
   </section>
 
-  <section id="meme-no-ai-slop">
-    <Image src={aiJesus} alt="no slop" />
-  </section>
-
   <section id="what-is-the-toolschain">
-    <h2>What is a toolchain?</h2>
+    <Image src={modernDev} alt="modern dev meme" />
   </section>
  
   <section id="the-toolchain">
     <h2>A collection of tools for:</h2>
     <ul class="leading-relaxed">
-      <li><span class="text-3xl">📦</span> Package management</li>
-      <li><span class="text-3xl">🖥️</span> Local development</li>
-      <li><span class="text-3xl">⚗️</span> Improving code quality</li>
-      <li><span class="text-3xl">🔨</span> Building & bundling</li>
-      <li><span class="text-3xl">⚙️</span> Optimization</li>
-      <li><span class="text-3xl">🏃‍♂️</span> Running task & deployment</li>
+      <li><span class="mono text-3xl">📦</span> Package management</li>
+      <li><span class="mono text-3xl">🖥️</span> Local development</li>
+      <li><span class="mono text-3xl">⚗️</span> Improving code quality</li>
+      <li><span class="mono text-3xl">🔨</span> Building & bundling</li>
+      <li><span class="mono text-3xl">⚙️</span> Optimization</li>
+      <li><span class="mono text-3xl">🏃‍♂️</span> Running task & deployment</li>
     </ul>
-  </section>
-
-  <section id="meme-rube-goldberg">
-    <Image src={modernDev} alt="modern dev meme" />
   </section>
 
   <section id="let-there-be-tools-1">
@@ -80,7 +80,8 @@ const nodeServer = `
   </section>
 
   <section id="dawn-of-time">
-    <Title prefix="1991-2000">Dawn of the web</Title>
+    <Title big prefix="1991 - 2000">Dawn of the web</Title>
+    <Subtitle>(when the dinosaurs still roamed the Earth)</Subtitle>
   </section>
 
   <section id="in-the-beginning">
@@ -108,7 +109,7 @@ const nodeServer = `
   </section>
 
   <section id="first-wave">
-    <Title prefix="2001-2010">stone, bronze and iron</Title>
+    <Title big prefix="2001 - 2009">Stone, bronze and iron</Title>
     <Subtitle>(when the JS pyramids where built)</Subtitle>
   </section>
 
@@ -137,48 +138,54 @@ const nodeServer = `
 
   <section id="chrome">
     <Title prefix="2009">Chrome & v8</Title>
-    JavaScript gets a new, faster engine!
+    JavaScript gets a new, <Accent variant='secondary'>faster</Accent> engine!
   </section>
 
   <section id="node-js">
-    <Title prefix="2009">node.js</Title>
-    <p><Accent variant='tertiary'>Ryan Dahl</Accent> publishes the definitive server side runtime for javascript</p>
-    <pre><code class="language-javascript">{nodeServer}</code></pre>
+    <ToolSlide name="node.js" logo={nodeLogo}>
+      <slot id="desc">
+        <p class="pl-2 text-left text-lg">
+          <Accent variant='tertiary'>Ryan Dahl</Accent> publishes the definitive server side runtime for javascript
+        </p>
+      </slot>
+    </ToolSlide>
   </section>
 
   <section id="source-maps">
     <Title prefix="2009">Source maps</Title>
-    Allow us to debug minified code
+    <p class="text-lg">
+      mapping from transformed and minified code to the original, much easier to debug
+    </p>
+    <Image src={sourceMaps} alt="leave source maps on in prod" />
+  </section>
+
+  <section id="industrial-revolution">
+    <Title big prefix="2010 - 2018">Industrial revolution</Title>
+    <Subtitle>(the prolifiration of framework drives the tooling)</Subtitle>
   </section>
 
   <section id="npm">
-    <Title prefix="2010">npm</Title>
-    enabling side-chain attacks since before it was cool
+    <ToolSlide name="npm" logo={npmLogo} />
   </section>
 
   <section id="backbone">
-    <Title prefix="2010">backbone js</Title>
-    The first popular js framework
+    <ToolSlide name="Backbone.js" logo={backboneLogo} />
   </section>
 
   <section id="angular">
-    <Title prefix="2010">angular</Title>
-    Google creates its own framework
+    <ToolSlide name="Angular" logo={angularLogo} />
   </section>
 
-  <section id="cambrian-explosion">
-    <Title prefix="2011-2018">industrial revolution</Title>
-    <Subtitle>the prolifiration of framework drives the tooling</Subtitle>
+  <section id="coffeescript">
+    <ToolSlide name="CoffeeScript" logo={coffeeLogo} />
   </section>
 
   <section id="jasmine">
-    <Title prefix="2010">Jasmine</Title>
-    <p>The first JS testing framework</p>
+    <ToolSlide name="jasmine" logo={jasmineLogo} />
   </section>
 
   <section id="browserify">
-    <Title prefix="2011">Browserify</Title>
-    The first pure JS bundler
+    <ToolSlide name="Browserify" logo={browserifyLogo} />
   </section>
 
   <section id="need-for-speed">
@@ -192,28 +199,24 @@ const nodeServer = `
   </section>
 
   <section id="grunt">
-    <Title prefix="2012">Grunt</Title>
-    The first purpose built js task runner
+    <ToolSlide name="Grunt" logo={gruntLogo} />
   </section>
 
   <section id="webpack">
-    <Title prefix="2012">webpack</Title>
-    still popular today
+    <ToolSlide name="webpack" logo={webpackLogo} />
   </section>
 
   <section id="typescript">
     <Title prefix="2012">typescript</Title>
-    the most helpful but annoying linter
+    <p>the most helpful but annoying linter</p>
   </section>
 
   <section id="react">
-    <Title prefix="2013">react</Title>
-    Facebook published the first version of React
+    <ToolSlide name="react" logo={reactLogo} />
   </section>
 
   <section id="gulp">
-    <Title prefix="2013">gulp</Title>
-    A task runner with a better API
+    <ToolSlide name="Gulp" logo={gulpLogo} />
   </section>
 
   <section id="eslint">
@@ -228,8 +231,11 @@ const nodeServer = `
   </section>
 
   <section id="vue">
-    <Title prefix="2014">vue</Title>
-    <p><Accent variant='tertiary'>Evan You</Accent> releases the first version of Vue.js</p>
+    <ToolSlide name="vue" logo={vueLogo}>
+      <slot id="desc">
+        <p><Accent variant='tertiary'>Evan You</Accent> releases the framework for the rest of us</p>
+      </slot>
+    </ToolSlide>
   </section>
  
   <section id="babel">
@@ -265,8 +271,17 @@ const nodeServer = `
   </section>
 
   <section id="next-js">
-    <Title prefix="2016">next.js</Title>
-    and the rise of the meta-frameworks
+    <ToolSlide name="next.js" logo={nextLogo}>
+  </section>
+
+  <section id="svelte">
+    <ToolSlide name="svelte" logo={svelteLogo}>
+      <slot id="desc">
+        <p class="pl-2 text-left text-lg">
+          <Accent variant='tertiary'>Rich Harris</Accent> releases his compiler-based framework
+        </p>
+      </slot>
+    </ToolSlide>
   </section>
 
   <section id="lsp">
@@ -286,13 +301,7 @@ const nodeServer = `
   </section>
 
   <section id="parcel">
-    <Title prefix="2017">parcel</Title>
-    Some tools don't last, but they pave the way.
-    <ul>
-      <li>zero config needed</li>
-      <li>out-of-the-box features</li>
-      <li>focused on speed</li>
-    </ul>
+    <ToolSlide name="parcel" logo={parcelLogo}/>
   </section>
 
   <section id="wasm">
@@ -305,37 +314,55 @@ const nodeServer = `
   </section>
 
   <section id="modern-days">
-    <Title prefix="2019-2025">modern? times</Title>
-    the world runs on js
+    <Title big prefix="2019 - 2025">pre-postanthropocene</Title>
+    <Subtitle>(or the period soon to be referred to as "the good old days")</Subtitle>
   </section>
 
   <section id="monorepos">
     <Title prefix="2019">nx</Title>
-    Do put all your projects in one basket
+    Put all your projects in one basket
   </section>
 
   <section id="esbuild">
     <Title prefix="2020">esbuild</Title>
+    <p>a <Accent>golang-</Accent>based js/ts bundler focused on speed</p>
+  </section>
+
+  <section id="swc">
+    <Title prefix="2020">swc</Title>
+    <p>a <Accent variant='secondary'>rust</Accent>-based js/ts complier focused on speed</p>
   </section>
 
   <section id="vite">
-    <Title prefix="2020">vite</Title>
-    Evan You has a dream - a universal build tool
+    <ToolSlide name="vite" logo={viteLogo}>
+      <slot id="desc">
+        <p class="pl-2 text-left text-lg">
+          <Accent variant='tertiary'>Evan You</Accent> has a dream - a universal build tool
+        </p>
+      </slot>
+    </ToolSlide>
   </section>
 
   <section id="deno">
     <Title prefix="2020">deno</Title>
-    Ryan Dahl strikes again!
+    <p><Accent variant='tertiary'>Ryan Dahl</Accent> strikes again!</p>
+    <p><b>FAST</b> js runtime written in <Accent>rust</Accent> with builtin TS/JSX support</p>
   </section>
 
   <section id="bun">
     <Title prefix="2021">bun</Title>
-    FAST js runtime written in zig, running with JavaScriptCore (instead of v8)
+    <p><b>FAST</b> js runtime written in <Accent variant='secondary'>zig</Accent> with builtin TS/JSX support</p>
+    <p class="text-lg italic">(but with JavaScriptCore instead of v8)</p>
+  </section>
+
+  <section id="turbopack">
+    <Title prefix="2022">Turbopack</Title>
+    <p>Vercel develop a bundler <Accent variant='secondary'>500x</Accent> faster than webpack</p>
   </section>
 
   <section id="biome">
     <Title prefix="2023">biome</Title>
-    an even more opinionated formatter - thanks gofmt
+    <p>an even more opinionated formatter - thanks gofmt</p>
   </section>
 
   <section id="runtime-proliferation">
@@ -369,20 +396,24 @@ const nodeServer = `
   </section>
 
   <section id="lessons-learned">
-    (lessons learned)
+    <h2>Lessons learned</h2>
+    <!-- <ul> -->
+    <!--   <li>The tools will continue to evolve</li> -->
+    <!--   <li>Vendors are baking complex functionality into the tooling</li> -->
+    <!--   <li></li> -->
+    <!--   <li></li> -->
+    <!-- </ul> -->
   </section>
 
   <section id="repeating-the-main-point">
     <h3>
-The tools we take for granted today are the result of years of <Accent variant='primary'>evolution</Accent>
+      The tools we take for granted today are the result of years of <Accent variant='primary'>evolution</Accent>
     </h3>
   </section>
 
   <section id="repeating-the-main-point">
-    <h3>
-      the web is still evolving against all odds
-    </h3>
-    <p>walled gardens, cryto scams, ai slop, etc</p>
+    <h3>the web is still evolving against all odds</h3>
+    <p class="italic">(walled gardens, cryto scams, ai slop, etc)</p>
   </section>
 
   <section id="thank-you">

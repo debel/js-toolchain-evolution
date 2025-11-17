@@ -1,0 +1,35 @@
+---
+import type { ImageMetadata } from 'astro';
+import { Image } from 'astro:assets';
+import Title from './Title.astro'
+import Code from './Code.astro'
+
+import tools from '../tools.ts';
+
+export interface Props {
+  name: keyof typeof tools;
+  logo?: ImageMetadata
+}
+
+const { name, logo } = Astro.props;
+
+const tool = tools[name];
+
+const sampleLang = tool.sampleLang || 'javascript';
+---
+
+<div class=" flex flex-row items-center justify-center">
+  {logo && <Image class="no-m" width={75} src={logo} alt="grunt-logo" />}
+  <div class="max-w-1/2 ml-6">
+    <Title left prefix={tool.year}>{name}</Title>
+    {tool.desc ? (<p class="pl-3 text-left text-lg">{tool.desc}</p>) : <slot id="desc" />}
+
+    {tool.pro && tool.con && (
+      <ul class="block text-sm">
+        <li><span class="text-green-400">PRO: </span> {tool.pro}</li>
+        <li><span class="text-red-400">CON: </span>{tool.con}</li>
+      </ul>
+    )}
+  </div>
+</div>
+{tool.sample && <Code sample={tool.sample} lang={sampleLang} />}

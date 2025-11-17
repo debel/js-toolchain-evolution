@@ -1,9 +1,15 @@
 ---
-const { prefix } = Astro.props;
+const { prefix, left = false, big = false } = Astro.props;
 
 export const fancyGradient = "bg-gradient-to-r from-lime-700 via-blue-400 to-purple-700 inline-block text-transparent bg-clip-text"
 
-const prefixFull = !prefix ? "" : `${prefix}: `;
+const colon = big ? "" : ": ";
+const prefixFull = !prefix ? "" : `${prefix}${colon}`;
+
+let h3Classes = left ? "text-left" : "";
 ---
 
-<h3><span class={fancyGradient}>{prefixFull}</span> <slot /></h3>
+{big
+  ? <h3><span class={fancyGradient}>{prefixFull}</span></h3><h3><slot /></h3>
+: <h3 class={h3Classes}><span class={fancyGradient}>{prefixFull} </span>&nbsp;<slot /></h3>
+}
