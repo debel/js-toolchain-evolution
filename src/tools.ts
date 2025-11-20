@@ -98,6 +98,22 @@ const tools = {
     optimization: { minimize: true }
   };`
   },
+  "TypeScript": {
+    year: 2012,
+    desc: 'the most helpful but annoying linter',
+    pro: 'you can use types in your javascript',
+    con: 'you have to use types in your javascript',
+    sampleLang: 'TypeScript',
+    sample: `
+  type LightSwitchConfig = { on: boolean; off: boolean; toggle: () => void };
+
+  type LightSwitch = Omit<Pick<LightSwitchConfig, keyof LightSwitchConfig>, 'toggle'> & {
+    state: Awaited<Promise<Extract<keyof Pick<LightSwitchConfig, 'on' | 'off'>, string>>>;
+    flip: (...args: Parameters<LightSwitchConfig['toggle']>) =>
+      ReturnType<typeof Promise.resolve<void>>;
+  };
+    `
+  },
   Gulp: {
     year: 2013,
     desc: "A task runner with a better API",
@@ -143,6 +159,9 @@ const tools = {
     },
     esbuild: { jsx: 'automatic' }
   });`
+  },
+  oxc: {
+    year: 2025,
   }
 } as Record<string, toolDef>;
 

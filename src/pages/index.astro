@@ -16,6 +16,9 @@ import goodparts from '../assets/good-parts.png'
 import jquery from '../assets/jquery.jpg'
 import firebug from '../assets/firebug.png'
 import sourceMaps from '../assets/source-maps.jpg'
+import win95 from '../assets/win95-in-the-browser.png'
+import blankPage from '../assets/blank-page.png'
+import webIsKing from '../assets/chess-king.jpg'
 
 import nodeLogo from '../assets/nodejs.png'
 import npmLogo from '../assets/npm.svg'
@@ -23,6 +26,7 @@ import coffeeLogo from '../assets/coffeescript.png'
 import browserifyLogo from '../assets/browserify.png'
 import jasmineLogo from '../assets/jasmine.svg'
 import gruntLogo from '../assets/grunt-logo.svg'
+import typescriptLogo from '../assets/typescript.png'
 import gulpLogo from '../assets/gulp-logo.svg'
 import webpackLogo from '../assets/webpack-logo.svg'
 import parcelLogo from '../assets/parcel.avif'
@@ -33,6 +37,8 @@ import vueLogo from '../assets/vue.png'
 import svelteLogo from '../assets/svelte.png'
 import nextLogo from '../assets/vercel.png'
 import viteLogo from '../assets/vite.png'
+import astroLogo from '../assets/astro-logo.svg'
+import oxcLogo from '../assets/oxc-logo.svg'
 
 ---
 
@@ -75,8 +81,11 @@ import viteLogo from '../assets/vite.png'
   <section id="let-there-be-tools-3">
     <p class="pb-0 mb-0">In reality,</p>
     <h3>
-      the tools we take for granted today are the result of years of <Accent variant="secondary">feverish</Accent> evolution
+      the tools we take for granted today are the result of years of feverish <Accent variant="secondary">evolution</Accent>
     </h3>
+    <aside class="notes">
+      evolution has 2 parts: production and selection
+    </aside>
   </section>
 
   <section id="dawn-of-time">
@@ -188,14 +197,16 @@ import viteLogo from '../assets/vite.png'
     <ToolSlide name="Browserify" logo={browserifyLogo} />
   </section>
 
-  <section id="need-for-speed">
+  <section id="emscripten">
     <Title prefix="2011">Emscripten</Title>
-    <p>laying the groundwork for wasm</p>
+    <p>compile c++ to js</p>
+    <p class="italic">(laying the groundwork for wasm)</p>
   </section>
 
   <section id="js-linux">
     <Title prefix="2011">JSLinux</Title>
     <p>the birth of in-browser VMs</p>
+    <Image src={win95} alt="win95 in the browser" />
   </section>
 
   <section id="grunt">
@@ -207,8 +218,7 @@ import viteLogo from '../assets/vite.png'
   </section>
 
   <section id="typescript">
-    <Title prefix="2012">typescript</Title>
-    <p>the most helpful but annoying linter</p>
+    <ToolSlide name="TypeScript" logo={typescriptLogo} />
   </section>
 
   <section id="react">
@@ -286,8 +296,8 @@ import viteLogo from '../assets/vite.png'
 
   <section id="lsp">
     <Title prefix="2016">Language Servers Unite!</Title>
-    Microsoft releases the first ever LSP.
-    It is for typescript
+    <p>Microsoft releases the first ever LSP.</p>
+    <p>for <Accent variant='secondary'>TypeScript</Accent></p>
   </section>
 
   <section id="prettier">
@@ -310,7 +320,8 @@ import viteLogo from '../assets/vite.png'
 
   <section id="lighthouse">
     <Title prefix="2018">Lighthouse</Title>
-    So you can measure how slow your site actually is
+    making your site fast is easy - just remove all the bloat
+    <Image src={blankPage} alt="a blank page is a fast page" />
   </section>
 
   <section id="modern-days">
@@ -381,13 +392,40 @@ import viteLogo from '../assets/vite.png'
 
   <section id="compiler-proliferation">
     <Title prefix="2025">everyone has a compiler now</Title>
-    <p>almost all major frameworks have their own compiler:</p>
-    <ul>
-      <li>svelte</li>
-      <li>react</li>
-      <li>astro</li>
-      <li>next</li>
-    </ul>
+    <p>almost all major frameworks have their own compiler</p>
+    <div class="mt-4 flex flex-row gap-4 justify-center">
+      <span class="p-2 rounded-xl bg-gray-800 drop-shadow-lg drop-shadow-gray-500/50">
+        <Image height={20} src={svelteLogo} alt="svelte"/>svelte
+      </span>
+      <span class="p-2 rounded-xl bg-gray-800 drop-shadow-lg drop-shadow-gray-500/50">
+        <Image height={20} src={astroLogo} alt="astro"/>astro
+      </span>
+      <span class="p-2 rounded-xl bg-gray-800 drop-shadow-lg drop-shadow-gray-500/50">
+        <Image height={20} src={reactLogo} alt="react"/>react
+      </span>
+      <span class="p-2 rounded-xl bg-gray-800 drop-shadow-lg drop-shadow-gray-500/50">
+        <Image height={20} src={nextLogo} alt="svelte"/>&nbsp;next&nbsp;
+      </span>
+      <span class="p-2 rounded-xl bg-gray-800 drop-shadow-lg drop-shadow-gray-500/50">
+        <Image height={20} src={oxcLogo} alt="oxc"/>&nbsp;&nbsp;oxc&nbsp;&nbsp;
+      </span>
+    </div>
+  </section>
+
+  <section id="oxc">
+    <ToolSlide name="oxc" logo={oxcLogo}>
+      <slot id="desc">
+        <p class="text-left">a <Accent>unified</Accent> <Accent variant='secondary'>high-performance</Accent> toolchain for JavaScript</p>
+      </slot>
+    </ToolSlide>
+    <div class="mt-4 flex flex-row gap-4 justify-center">
+      <span class="p-2 rounded-xl bg-gray-800 drop-shadow-lg drop-shadow-gray-500/50">parser</span>
+      <span class="p-2 rounded-xl bg-gray-800 drop-shadow-lg drop-shadow-gray-500/50">linter</span>
+      <span class="p-2 rounded-xl bg-gray-800 drop-shadow-lg drop-shadow-gray-500/50">formatter</span>
+      <span class="p-2 rounded-xl bg-gray-800 drop-shadow-lg drop-shadow-gray-500/50">transpiler</span>
+      <span class="p-2 rounded-xl bg-gray-800 drop-shadow-lg drop-shadow-gray-500/50">minifier</span>
+      <span class="p-2 rounded-xl bg-gray-800 drop-shadow-lg drop-shadow-gray-500/50">resolver</span>
+    </div>
   </section>
 
   <section id="whats-next">
@@ -397,12 +435,12 @@ import viteLogo from '../assets/vite.png'
 
   <section id="lessons-learned">
     <h2>Lessons learned</h2>
-    <!-- <ul> -->
-    <!--   <li>The tools will continue to evolve</li> -->
-    <!--   <li>Vendors are baking complex functionality into the tooling</li> -->
-    <!--   <li></li> -->
-    <!--   <li></li> -->
-    <!-- </ul> -->
+    <ul>
+      <li><span class="text-4xl mr-3">🦋</span> The tools will continue to evolve</li>
+      <li><span class="text-4xl mr-3">⚙️</span> Vendors are baking complex functionality into the tooling</li>
+      <li><span class="text-4xl mr-3">🏃</span> Things are moving too fast for pure open-source to keep up</li>
+      <li><span class="text-4xl mr-3">📚</span> Projects & Web Standards are trying to be aligned</li>
+    </ul>
   </section>
 
   <section id="repeating-the-main-point">
@@ -411,9 +449,10 @@ import viteLogo from '../assets/vite.png'
     </h3>
   </section>
 
-  <section id="repeating-the-main-point">
-    <h3>the web is still evolving against all odds</h3>
+  <section id="repeating-the-main-point-1">
+    <h3>the web is still thriving against all odds</h3>
     <p class="italic">(walled gardens, cryto scams, ai slop, etc)</p>
+    <Image src={webIsKing} alt="the web is still king" />
   </section>
 
   <section id="thank-you">
