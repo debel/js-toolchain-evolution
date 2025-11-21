@@ -12,13 +12,17 @@ import www from '../assets/www-v0.png'
 import js1 from '../assets/js-v1.png'
 import vikings from '../assets/vikings.jpg'
 import debugging from '../assets/debugging.jpg'
+import es5Meme from '../assets/es5.jpg'
 import goodparts from '../assets/good-parts.png'
 import jquery from '../assets/jquery.jpg'
 import firebug from '../assets/firebug.png'
 import sourceMaps from '../assets/source-maps.jpg'
 import win95 from '../assets/win95-in-the-browser.png'
+import es2015Meme from '../assets/es2015.jpg'
 import blankPage from '../assets/blank-page.png'
 import webIsKing from '../assets/chess-king.jpg'
+import viteRollupMeme from '../assets/vite-rollup.jpg'
+import turbopackSwcMeme from '../assets/turbopack-swc.jpg'
 
 import nodeLogo from '../assets/nodejs.png'
 import npmLogo from '../assets/npm.svg'
@@ -29,15 +33,30 @@ import gruntLogo from '../assets/grunt-logo.svg'
 import typescriptLogo from '../assets/typescript.png'
 import gulpLogo from '../assets/gulp-logo.svg'
 import webpackLogo from '../assets/webpack-logo.svg'
+import babelLogo from '../assets/babel.png'
 import parcelLogo from '../assets/parcel.avif'
 import backboneLogo from '../assets/backbone.png'
 import angularLogo from '../assets/angular.png'
 import reactLogo from '../assets/react.png'
 import vueLogo from '../assets/vue.png'
+import eslintLogo from '../assets/eslint.png'
+import electronLogo from '../assets/electron.png'
+import jestLogo from '../assets/jest.jpg'
+import rollupLogo from '../assets/rollup.png'
+import yarnLogo from '../assets/yarn.svg'
 import svelteLogo from '../assets/svelte.png'
 import nextLogo from '../assets/vercel.png'
+import prettierLogo from '../assets/prettier.png'
+import puppeteerLogo from '../assets/puppeteer.png'
+import nxLogo from '../assets/nx.png'
 import viteLogo from '../assets/vite.png'
+import esbuildLogo from '../assets/esbuild.png'
+import swcLogo from '../assets/swc.png'
+import denoLogo from '../assets/deno.svg'
+import bunLogo from '../assets/bun.svg'
 import astroLogo from '../assets/astro-logo.svg'
+import biomeLogo from '../assets/biome.svg'
+import jsrLogo from '../assets/jsr.svg'
 import oxcLogo from '../assets/oxc-logo.svg'
 
 ---
@@ -51,13 +70,10 @@ import oxcLogo from '../assets/oxc-logo.svg'
   <section id="about-me">
     <h2>Hi, I am <span class={fancyGradient}>@debelbot</span></h2>
   </section>
-
-  <section id="what-is-the-toolschain">
-    <Image src={modernDev} alt="modern dev meme" />
-  </section>
  
   <section id="the-toolchain">
-    <h2>A collection of tools for:</h2>
+    <h3>What is a toolchain?</h3>
+    <p>a collection of tools for:</p>
     <ul class="leading-relaxed">
       <li><span class="mono text-3xl">📦</span> Package management</li>
       <li><span class="mono text-3xl">🖥️</span> Local development</li>
@@ -66,6 +82,10 @@ import oxcLogo from '../assets/oxc-logo.svg'
       <li><span class="mono text-3xl">⚙️</span> Optimization</li>
       <li><span class="mono text-3xl">🏃‍♂️</span> Running task & deployment</li>
     </ul>
+  </section>
+
+  <section id="what-is-the-toolschain">
+    <Image src={modernDev} alt="modern dev meme" />
   </section>
 
   <section id="let-there-be-tools-1">
@@ -114,7 +134,7 @@ import oxcLogo from '../assets/oxc-logo.svg'
   <section id="first-debugger">
     <Title prefix="1998">Microsoft Script Debugger</Title>
     <p>The first browser wars leads to a wave of dedicated tooling</p>
-    <Image src={debugging} alt="things are starting to move" />
+    <Image height={475} src={debugging} alt="things are starting to move" />
   </section>
 
   <section id="first-wave">
@@ -160,12 +180,10 @@ import oxcLogo from '../assets/oxc-logo.svg'
     </ToolSlide>
   </section>
 
-  <section id="source-maps">
-    <Title prefix="2009">Source maps</Title>
-    <p class="text-lg">
-      mapping from transformed and minified code to the original, much easier to debug
-    </p>
-    <Image src={sourceMaps} alt="leave source maps on in prod" />
+  <section id="es5">
+    <Title prefix="2009">ES5</Title>
+    <p class="text-lg">the first update to the JS spec in 10 years</p>
+    <Image src={es5Meme} alt="all those sexy new features" />
   </section>
 
   <section id="industrial-revolution">
@@ -191,6 +209,14 @@ import oxcLogo from '../assets/oxc-logo.svg'
 
   <section id="jasmine">
     <ToolSlide name="jasmine" logo={jasmineLogo} />
+  </section>
+
+  <section id="source-maps">
+    <Title prefix="2010">Source maps</Title>
+    <p class="text-lg">
+      mapping from transformed and minified code to the original, much easier to debug
+    </p>
+    <Image src={sourceMaps} alt="leave source maps on in prod" />
   </section>
 
   <section id="browserify">
@@ -230,54 +256,57 @@ import oxcLogo from '../assets/oxc-logo.svg'
   </section>
 
   <section id="eslint">
-    <Title prefix="2013">eslint</Title>
-    <p>One linter to rule them all</p>
-    <aside class="italic">(just admit you imported the airbnb config without even thinking..)</aside>
+    <ToolSlide name="eslint" logo={eslintLogo} />
+    <p class="italic">(just admit you imported the airbnb config without even thinking...)</p>
   </section>
 
   <section id="desktop-js">
-    <Title prefix="2013">Electron</Title>
-    Now your desktop app can be slow and bloated too!
+    <ToolSlide name="electron" logo={electronLogo} />
   </section>
 
   <section id="vue">
     <ToolSlide name="vue" logo={vueLogo}>
       <slot id="desc">
-        <p><Accent variant='tertiary'>Evan You</Accent> releases the framework for the rest of us</p>
+        <p class="pl-3 text-left"><Accent variant='tertiary'>Evan You</Accent> releases the framework for the rest of us</p>
       </slot>
     </ToolSlide>
   </section>
  
   <section id="babel">
-    <Title prefix="2014">Babel</Title>
-    <p>With the rapid evolution of the language came the need for transpilation opening the gates for new syntax (e.g. JSX)</p>
+    <ToolSlide name="babel" logo={babelLogo} />
   </section>
 
-  <section id="the-rise-of-serverless">
-    <Title prefix="2014">AWS Lambda</Title>
-    the rise of serverless
-    (not directly related to dev-tools but significant for its impact on them)
-  </section>
+  <!-- <section id="the-rise-of-serverless"> -->
+  <!--   <Title prefix="2014">AWS Lambda</Title> -->
+  <!--   the rise of serverless -->
+  <!--   (not directly related to dev-tools but significant for its impact on them) -->
+  <!-- </section> -->
 
   <section id="jest">
-    <Title prefix="2014">Jest</Title>
-    <p>Facebook open-sources their testing framework</p>
+    <ToolSlide name="jest" logo={jestLogo} />
+  </section>
+
+  <section id="es6">
+    <Title prefix="2015">ES6</Title>
+    <p class="text-lg">JavaScript finally gets all the features it has been dreaming of</p>
+    <Image src={es2015Meme} alt="all those sexy new features" />
   </section>
 
   <section id="unpkg">
     <Title prefix="2015">unpkg</Title>
-    cdn for the masses
+    <p>cdn for the masses (of npm packages)</p>
   </section>
 
   <section id="rollup">
-    <Title prefix="2015">rollup</Title>
-    <p><Accent variant='tertiary'>Rich Harris</Accent> releases rollup -a bundler made for speed and extensibility</p>
+    <ToolSlide name="rollup" logo={rollupLogo}>
+      <slot id="desc">
+        <p class="text-left"><Accent variant='tertiary'>Rich Harris</Accent> releases a bundler made for speed and extensibility</p>
+      </slot>
+    </ToolSlide>
   </section>
 
   <section id="yarn">
-    <Title prefix="2015">yarn</Title>
-    move aside npm there is a faster cowboy in town
-    (now with lockfiles, so you can actually deploy what you intented)
+    <ToolSlide name="yarn" logo={yarnLogo} />
   </section>
 
   <section id="next-js">
@@ -295,19 +324,23 @@ import oxcLogo from '../assets/oxc-logo.svg'
   </section>
 
   <section id="lsp">
-    <Title prefix="2016">Language Servers Unite!</Title>
-    <p>Microsoft releases the first ever LSP.</p>
-    <p>for <Accent variant='secondary'>TypeScript</Accent></p>
+    <Title prefix="2016">Language Servers</Title>
+    <p>Microsoft releases the first ever LSP..</p>
+    <p>..for <Accent variant='secondary'>TypeScript</Accent></p>
   </section>
 
   <section id="prettier">
-    <Title prefix="2017">prettier</Title>
-    Format the code automatically, so we don't argue over tabs vs spaces
+    <ToolSlide name="prettier" logo={prettierLogo}>
+      <slot id="desc">
+        <p class="pl-2 text-left text-lg">
+          format code automatically - no more tabs vs spaces
+        </p>
+      </slot>
+    </ToolSlide>
   </section>
 
   <section id="puppeteer">
-    <Title prefix="2017">puppeteer</Title>
-    He who controls the browser, can run e2e tests with ease
+    <ToolSlide name="puppeteer" logo={puppeteerLogo} />
   </section>
 
   <section id="parcel">
@@ -316,11 +349,23 @@ import oxcLogo from '../assets/oxc-logo.svg'
 
   <section id="wasm">
     <Title prefix="2017">Web Assembly</Title>
+    <p>the web can now run <Accent variant='secondary'>serious</Accent> languages</p>
+    <div class="mt-4 flex flex-row gap-4 justify-center">
+      <span class="p-2 rounded-xl bg-gray-800 drop-shadow-lg drop-shadow-gray-500/50">
+        performant
+      </span>
+      <span class="p-2 rounded-xl bg-gray-800 drop-shadow-lg drop-shadow-gray-500/50">
+        sandboxed
+      </span>
+      <span class="p-2 rounded-xl bg-gray-800 drop-shadow-lg drop-shadow-gray-500/50">
+        cross-platform
+      </span>
+    </div>
   </section>
 
   <section id="lighthouse">
     <Title prefix="2018">Lighthouse</Title>
-    making your site fast is easy - just remove all the bloat
+    <p>making your site fast is easy - just remove all the bloat</p>
     <Image src={blankPage} alt="a blank page is a fast page" />
   </section>
 
@@ -330,18 +375,27 @@ import oxcLogo from '../assets/oxc-logo.svg'
   </section>
 
   <section id="monorepos">
-    <Title prefix="2019">nx</Title>
-    Put all your projects in one basket
+    <ToolSlide name="nx" logo={nxLogo} />
   </section>
 
   <section id="esbuild">
-    <Title prefix="2020">esbuild</Title>
-    <p>a <Accent>golang-</Accent>based js/ts bundler focused on speed</p>
+    <ToolSlide name="esbuild" logo={esbuildLogo}>
+      <slot id="desc">
+        <p class="pl-2 text-left text-lg">
+          a <Accent>golang-</Accent>based js/ts bundler focused on speed
+        </p>
+      </slot>
+    </ToolSlide>
   </section>
 
   <section id="swc">
-    <Title prefix="2020">swc</Title>
-    <p>a <Accent variant='secondary'>rust</Accent>-based js/ts complier focused on speed</p>
+    <ToolSlide name="swc" logo={swcLogo}>
+      <slot id="desc">
+        <p class="pl-2 text-left text-lg">
+          a <Accent variant='secondary'>rust</Accent>-based js/ts complier focused on speed
+        </p>
+      </slot>
+    </ToolSlide>
   </section>
 
   <section id="vite">
@@ -354,26 +408,63 @@ import oxcLogo from '../assets/oxc-logo.svg'
     </ToolSlide>
   </section>
 
+  <section id="vite-rollup-meme">
+    <Image src={viteRollupMeme} alt="vite is just rollup with extra steps" />
+  </section>
+
   <section id="deno">
-    <Title prefix="2020">deno</Title>
-    <p><Accent variant='tertiary'>Ryan Dahl</Accent> strikes again!</p>
-    <p><b>FAST</b> js runtime written in <Accent>rust</Accent> with builtin TS/JSX support</p>
+    <ToolSlide name="deno" logo={denoLogo}>
+      <slot id="desc">
+        <p class="pl-2 text-left text-lg">
+          <Accent variant='tertiary'>Ryan Dahl</Accent> strikes again!<br/>
+          <b>FAST</b> js runtime written in <Accent>rust</Accent> with builtin TS/JSX support
+        </p>
+      </slot>
+    </ToolSlide>
   </section>
 
   <section id="bun">
-    <Title prefix="2021">bun</Title>
-    <p><b>FAST</b> js runtime written in <Accent variant='secondary'>zig</Accent> with builtin TS/JSX support</p>
-    <p class="text-lg italic">(but with JavaScriptCore instead of v8)</p>
+    <ToolSlide name="bun" logo={bunLogo}>
+      <slot id="desc">
+        <p class="pl-2 text-left text-lg">
+          <b>FAST</b> js runtime written in <Accent variant='secondary'>zig</Accent> with builtin TS/JSX support
+          <br /><span class="italic">(but with JavaScriptCore instead of v8)</span>
+        </p>
+      </slot>
+    </ToolSlide>
   </section>
 
   <section id="turbopack">
-    <Title prefix="2022">Turbopack</Title>
-    <p>Vercel develop a bundler <Accent variant='secondary'>500x</Accent> faster than webpack</p>
+    <ToolSlide name="turbopack" logo={nextLogo}>
+      <slot id="desc">
+        <p class="pl-2 text-left text-lg">
+          Vercel develop a bundler <Accent variant='secondary'>500x</Accent> faster than webpack
+        </p>
+      </slot>
+    </ToolSlide>
+  </section>
+
+  <section id="turbopack-swc-meme">
+    <Image src={turbopackSwcMeme} alt="turbopack is just swc with extra steps" />
+  </section>
+
+  <section id="astro">
+    <ToolSlide name="astro" logo={astroLogo}/>
   </section>
 
   <section id="biome">
-    <Title prefix="2023">biome</Title>
-    <p>an even more opinionated formatter - thanks gofmt</p>
+    <ToolSlide name="biome" logo={biomeLogo}>
+      <slot id="desc">
+        <p class="pl-2 text-left text-lg">
+          an even more opinionated linter and formatter
+          <br/> thanks <Accent variant='tertiary'>gofmt</Accent>
+        </p>
+      </slot>
+    </ToolSlide>
+  </section>
+
+  <section id="jsr">
+    <ToolSlide name="jsr" logo={jsrLogo}/>
   </section>
 
   <section id="runtime-proliferation">
@@ -387,29 +478,7 @@ import oxcLogo from '../assets/oxc-logo.svg'
 
   <section id="wasm-v3">
     <Title prefix="2025">wasm v3</Title>
-    <p>the new version of wasm brings a lot of improvements, making the web an even more viable compile target</p>
-  </section>
-
-  <section id="compiler-proliferation">
-    <Title prefix="2025">everyone has a compiler now</Title>
-    <p>almost all major frameworks have their own compiler</p>
-    <div class="mt-4 flex flex-row gap-4 justify-center">
-      <span class="p-2 rounded-xl bg-gray-800 drop-shadow-lg drop-shadow-gray-500/50">
-        <Image height={20} src={svelteLogo} alt="svelte"/>svelte
-      </span>
-      <span class="p-2 rounded-xl bg-gray-800 drop-shadow-lg drop-shadow-gray-500/50">
-        <Image height={20} src={astroLogo} alt="astro"/>astro
-      </span>
-      <span class="p-2 rounded-xl bg-gray-800 drop-shadow-lg drop-shadow-gray-500/50">
-        <Image height={20} src={reactLogo} alt="react"/>react
-      </span>
-      <span class="p-2 rounded-xl bg-gray-800 drop-shadow-lg drop-shadow-gray-500/50">
-        <Image height={20} src={nextLogo} alt="svelte"/>&nbsp;next&nbsp;
-      </span>
-      <span class="p-2 rounded-xl bg-gray-800 drop-shadow-lg drop-shadow-gray-500/50">
-        <Image height={20} src={oxcLogo} alt="oxc"/>&nbsp;&nbsp;oxc&nbsp;&nbsp;
-      </span>
-    </div>
+    <p>making the web an even more viable compiler target</p>
   </section>
 
   <section id="oxc">
@@ -438,9 +507,35 @@ import oxcLogo from '../assets/oxc-logo.svg'
     <ul>
       <li><span class="text-4xl mr-3">🦋</span> The tools will continue to evolve</li>
       <li><span class="text-4xl mr-3">⚙️</span> Vendors are baking complex functionality into the tooling</li>
+      <li><span class="text-4xl mr-3">🌩️</span> With the rise of WASM, tooling can be written in any language</li>
       <li><span class="text-4xl mr-3">🏃</span> Things are moving too fast for pure open-source to keep up</li>
       <li><span class="text-4xl mr-3">📚</span> Projects & Web Standards are trying to be aligned</li>
     </ul>
+  </section>
+
+  <section id="compiler-proliferation">
+    <Title>everyone has a compiler now</Title>
+    <p>almost all major frameworks have their own compiler</p>
+    <div class="mt-4 flex flex-row gap-4 justify-center">
+      <span class="p-2 rounded-xl bg-gray-800 drop-shadow-lg drop-shadow-gray-500/50">
+        <Image height={20} src={svelteLogo} alt="svelte"/>svelte
+      </span>
+      <span class="p-2 rounded-xl bg-gray-800 drop-shadow-lg drop-shadow-gray-500/50">
+        <Image height={20} src={astroLogo} alt="astro"/>astro
+      </span>
+      <span class="p-2 rounded-xl bg-gray-800 drop-shadow-lg drop-shadow-gray-500/50">
+        <Image height={20} src={reactLogo} alt="react"/>react
+      </span>
+      <span class="p-2 rounded-xl bg-gray-800 drop-shadow-lg drop-shadow-gray-500/50">
+        <Image height={20} src={vueLogo} alt="vue"/>vue
+      </span>
+      <span class="p-2 rounded-xl bg-gray-800 drop-shadow-lg drop-shadow-gray-500/50">
+        <Image height={20} src={nextLogo} alt="svelte"/>&nbsp;next&nbsp;
+      </span>
+      <span class="p-2 rounded-xl bg-gray-800 drop-shadow-lg drop-shadow-gray-500/50">
+        <Image height={20} src={oxcLogo} alt="oxc"/>&nbsp;&nbsp;oxc&nbsp;&nbsp;
+      </span>
+    </div>
   </section>
 
   <section id="repeating-the-main-point">

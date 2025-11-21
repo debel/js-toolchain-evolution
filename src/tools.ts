@@ -8,18 +8,6 @@ interface toolDef {
 }
 
 const tools = {
-  "node.js": {
-    year: 2009,
-    sample: `
-  const http = require('http');
-
-  const server = http.createServer(function (req, res) {
-    res.end('Hello, World!');
-  });
-
-  server.listen(8080);
-    `
-  },
   npm: {
     year: 2010,
     desc: "the first JS package manager",
@@ -132,6 +120,72 @@ const tools = {
   });
     `
   },
+  eslint: {
+    year: 2013,
+    desc: 'One linter to rule them all',
+
+  },
+  babel: {
+    year: 2014,
+    desc: 'With the rapid evolution of the language came the need for transpilation',
+    sample: `
+  {
+    "plugins": [
+      "@babel/plugin-transform-react-jsx",
+      "@babel/plugin-transform-typescript"
+    ]
+  }
+    `
+  },
+  jest: {
+    year: 2014,
+    desc: 'Facebook open-sources their testing framework',
+    pro: 'easy mocking and snapshots, react-ready',
+    con: 'lots of dependencies, problematic ESM support',
+    sample: `
+  describe('my beverage', () => {
+    test('is beer', () => {
+      expect(myBeverage.type).toBeInstanceOf(Beer);
+    });
+
+    test('is sour', () => {
+      expect(myBeverage.sour).toBeTruthy();
+    });
+  });
+    `
+  },
+  rollup: {
+    year: 2015,
+    pro: 'native ESM, tree shaking',
+    con: 'no code splitting, no assets handling',
+    sample: `
+  {
+    entry: 'src/index.js',
+    dest: 'dist/bundle.js',
+    format: 'umd',
+    moduleName: 'MyLibrary',
+    plugins: [
+      resolve({ jsnext: true, browser: true }),
+      commonjs(),
+      babel({ presets: ['es2015-rollup'] }),
+      uglify()
+    ]
+  }
+    `
+  },
+  yarn: {
+    year: 2015,
+    desc: 'move aside npm there is a faster cowboy in town',
+    pro: 'lockfile, faster than npm (at the time)',
+    con: 'lock file conflicts, disk space usage'
+  },
+  prettier: {
+    year: 2017,
+  },
+  puppeteer: {
+    year: 2017,
+    desc: 'He who controls the browser, can run e2e tests'
+  },
   parcel: {
     year: 2017,
     desc: "Some tools don't last, but they pave the way",
@@ -142,6 +196,16 @@ const tools = {
     /* not needed in the majority of cases */
     "extends": "@parcel/config-default",
   }`
+  },
+  nx: {
+    year: 2019,
+    desc: 'Put all your projects in one basket'
+  },
+  esbuild: {
+    year: 2020,
+  },
+  swc: {
+    year: 2020,
   },
   vite: {
     year: 2020,
@@ -159,6 +223,16 @@ const tools = {
     },
     esbuild: { jsx: 'automatic' }
   });`
+  },
+  turbopack: {
+    year: 2022,
+  },
+  biome: {
+    year: 2023,
+  },
+  jsr: {
+    year: 2023,
+    desc: 'a package registry for the new age'
   },
   oxc: {
     year: 2025,
@@ -222,6 +296,19 @@ const frameworks = {
   }
     `
   },
+  "electron": {
+    year: 2013,
+    desc: 'Now your desktop app can be slow and bloated too!',
+    sample: `
+  const { app, BrowserWindow } = require('electron/main')
+
+  app.whenReady().then(() => {
+    const win = new BrowserWindow({ width: 800, height: 600 })
+
+    win.loadFile('index.html')
+  })
+    `
+  },
   "vue": {
     year: 2014,
     pro: "approachable and incremental",
@@ -271,6 +358,46 @@ const frameworks = {
   }
     `
   },
+  "astro": {
+    year: 2022,
+    desc: 'a meta framework focused on SSG',
+    pro: 'flexible - supports most all rendering frameworks',
+    con: 'custom syntax, immature server/api support',
+    sampleLang: 'astro',
+    sample: `
+  ---
+    import {logo} from '../assets/logo.svg'
+    
+    const { data } = Astro.props;
+  ---
+
+  <Layout>
+    <header><Image src={logo} />My project</header>
+    {data && <Chart data={data} />}
+  </Layout>
+    `
+  }
 } as Record<string, toolDef>;
 
-export default { ...tools, ...frameworks };
+const runtimes = {
+  "node.js": {
+    year: 2009,
+    sample: `
+  const http = require('http');
+
+  const server = http.createServer(function (req, res) {
+    res.end('Hello, World!');
+  });
+
+  server.listen(8080);
+    `
+  },
+  deno: {
+    year: 2020,
+  },
+  bun: {
+    year: 2021,
+  }
+} as Record<string, toolDef>;
+
+export default { ...tools, ...frameworks, ...runtimes };
