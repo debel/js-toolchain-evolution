@@ -8,12 +8,6 @@ interface toolDef {
 }
 
 const tools = {
-  npm: {
-    year: 2010,
-    desc: "the first JS package manager",
-    pro: "a vast repository of ready-to-use tools and libraries",
-    con: "enabling side-chain attacks since before it was cool",
-  },
   jasmine: {
     year: 2010,
     desc: "The first popular JS testing framework",
@@ -173,12 +167,6 @@ const tools = {
   }
     `
   },
-  yarn: {
-    year: 2015,
-    desc: 'move aside npm there is a faster cowboy in town',
-    pro: 'lockfile, faster than npm (at the time)',
-    con: 'lock file conflicts, disk space usage'
-  },
   prettier: {
     year: 2017,
   },
@@ -227,6 +215,10 @@ const tools = {
   turbopack: {
     year: 2022,
   },
+  unjs: {
+    year: 2022,
+    desc: "a collection of independent JS tools",
+  },
   biome: {
     year: 2023,
   },
@@ -236,6 +228,27 @@ const tools = {
   },
   oxc: {
     year: 2025,
+  }
+} as Record<string, toolDef>;
+
+const packageMngrs = {
+  npm: {
+    year: 2010,
+    desc: "the first JS package manager",
+    pro: "a vast repository of ready-to-use tools and libraries",
+    con: "enabling side-chain attacks since before it was cool",
+  },
+  yarn: {
+    year: 2015,
+    desc: 'move aside npm there is a faster cowboy in town',
+    pro: 'lockfile, faster than npm (at the time)',
+    con: 'lock file conflicts, disk space usage'
+  },
+  pnpm: {
+    year: 2016,
+    desc: 'an even better package manager',
+    pro: 'dependency deduplication, even faster',
+    con: 'compatiblity & symlinks issues'
   }
 } as Record<string, toolDef>;
 
@@ -400,4 +413,4 @@ const runtimes = {
   }
 } as Record<string, toolDef>;
 
-export default { ...tools, ...frameworks, ...runtimes };
+export default { ...tools, ...frameworks, ...runtimes, ...packageMngrs };
