@@ -7,12 +7,16 @@ import Title, { fancyGradient } from '../components/Title.astro';
 import Subtitle from '../components/Subtitle.astro';
 import ToolSlide from '../components/ToolSlide.astro';
 
+import rememberDev from '../assets/young-me.jpg';
 import modernDev from '../assets/modern-software-mess.jpg';
+import useToolsSafely from '../assets/use-tools-safely.jpg';
+import dinoJesus from '../assets/dino-jesus.webp';
 import www from '../assets/www-v0.png'
 import js1 from '../assets/js-v1.png'
 import vikings from '../assets/vikings.jpg'
 import debugging from '../assets/debugging.jpg'
 import es5Meme from '../assets/es5.jpg'
+import jsPyramids from '../assets/js-pyramids.jpg'
 import goodparts from '../assets/good-parts.png'
 import jquery from '../assets/jquery.jpg'
 import firebug from '../assets/firebug.png'
@@ -20,6 +24,7 @@ import sourceMaps from '../assets/source-maps.jpg'
 import win95 from '../assets/win95-in-the-browser.png'
 import es2015Meme from '../assets/es2015.jpg'
 import blankPage from '../assets/blank-page.png'
+import robocopMeme from '../assets/robocop.jpg'
 import webIsKing from '../assets/chess-king.jpg'
 import viteRollupMeme from '../assets/vite-rollup.jpg'
 import turbopackSwcMeme from '../assets/turbopack-swc.jpg'
@@ -71,11 +76,11 @@ import unjsLogo from '../assets/unjs.svg'
 
   <section id="about-me">
     <h2>Hi, I am <span class={fancyGradient}>@debelbot</span></h2>
+    <Image src={rememberDev} alt="me remembering the good old days" />
   </section>
  
   <section id="the-toolchain">
-    <h3>What is a toolchain?</h3>
-    <p>a collection of tools for:</p>
+    <h3>We use a <Accent>LOT</Accent> of tools</h3>
     <ul class="leading-relaxed">
       <li><span class="mono text-3xl">📦</span> Package management</li>
       <li><span class="mono text-3xl">🖥️</span> Local development</li>
@@ -84,10 +89,6 @@ import unjsLogo from '../assets/unjs.svg'
       <li><span class="mono text-3xl">⚙️</span> Optimization</li>
       <li><span class="mono text-3xl">🏃‍♂️</span> Running task & deployment</li>
     </ul>
-  </section>
-
-  <section id="what-is-the-toolschain">
-    <Image src={modernDev} alt="modern dev meme" />
   </section>
 
   <section id="let-there-be-tools-1">
@@ -113,6 +114,7 @@ import unjsLogo from '../assets/unjs.svg'
   <section id="dawn-of-time">
     <Title big prefix="1991 - 2000">Dawn of the web</Title>
     <Subtitle>(when the dinosaurs still roamed the Earth)</Subtitle>
+    <Image src={dinoJesus} alt="Dino Jesus" />
   </section>
 
   <section id="in-the-beginning">
@@ -142,6 +144,7 @@ import unjsLogo from '../assets/unjs.svg'
   <section id="first-wave">
     <Title big prefix="2001 - 2009">Stone, bronze and iron</Title>
     <Subtitle>(when the JS pyramids where built)</Subtitle>
+    <Image src={jsPyramids} alt="js pyramids" />
   </section>
 
   <section id="the-godfather-of-js">
@@ -191,6 +194,7 @@ import unjsLogo from '../assets/unjs.svg'
   <section id="industrial-revolution">
     <Title big prefix="2010 - 2018">Industrial revolution</Title>
     <Subtitle>(the prolifiration of framework drives the tooling)</Subtitle>
+    <Image src={modernDev} alt="modern dev meme" />
   </section>
 
   <section id="npm">
@@ -225,17 +229,17 @@ import unjsLogo from '../assets/unjs.svg'
     <ToolSlide name="Browserify" logo={browserifyLogo} />
   </section>
 
-  <section id="emscripten">
-    <Title prefix="2011">Emscripten</Title>
-    <p>compile c++ to js</p>
-    <p class="italic">(laying the groundwork for wasm)</p>
-  </section>
-
-  <section id="js-linux">
-    <Title prefix="2011">JSLinux</Title>
-    <p>the birth of in-browser VMs</p>
-    <Image src={win95} alt="win95 in the browser" />
-  </section>
+  <!-- <section id="emscripten"> -->
+  <!--   <Title prefix="2011">Emscripten</Title> -->
+  <!--   <p>compile c++ to js</p> -->
+  <!--   <p class="italic">(laying the groundwork for wasm)</p> -->
+  <!-- </section> -->
+  <!---->
+  <!-- <section id="js-linux"> -->
+  <!--   <Title prefix="2011">JSLinux</Title> -->
+  <!--   <p>the birth of in-browser VMs</p> -->
+  <!--   <Image src={win95} alt="win95 in the browser" /> -->
+  <!-- </section> -->
 
   <section id="grunt">
     <ToolSlide name="Grunt" logo={gruntLogo} />
@@ -260,6 +264,10 @@ import unjsLogo from '../assets/unjs.svg'
   <section id="eslint">
     <ToolSlide name="eslint" logo={eslintLogo} />
     <p class="italic">(just admit you imported the airbnb config without even thinking...)</p>
+  </section>
+
+  <section id="use-tools-safely">
+    <Image src={useToolsSafely} alt="it's not the tools its how you use them" />
   </section>
 
   <section id="desktop-js">
@@ -297,6 +305,7 @@ import unjsLogo from '../assets/unjs.svg'
   <section id="unpkg">
     <Title prefix="2015">unpkg</Title>
     <p>cdn for the masses (of npm packages)</p>
+    <p class="italic">[some people thought they would never need a build tool again..]</p>
   </section>
 
   <section id="rollup">
@@ -345,10 +354,6 @@ import unjsLogo from '../assets/unjs.svg'
     </ToolSlide>
   </section>
 
-  <section id="puppeteer">
-    <ToolSlide name="puppeteer" logo={puppeteerLogo} />
-  </section>
-
   <section id="parcel">
     <ToolSlide name="parcel" logo={parcelLogo}/>
   </section>
@@ -378,6 +383,7 @@ import unjsLogo from '../assets/unjs.svg'
   <section id="modern-days">
     <Title big prefix="2019 - 2025">pre-postanthropocene</Title>
     <Subtitle>(or the period soon to be referred to as "the good old days")</Subtitle>
+    <Image src={robocopMeme} alt="here to help you" />
   </section>
 
   <section id="monorepos">
@@ -456,6 +462,7 @@ import unjsLogo from '../assets/unjs.svg'
 
   <section id="unjs">
     <ToolSlide name="unjs" logo={unjsLogo}/>
+    <p class="italic">(there is a presentatio)</p>
   </section>
 
   <section id="astro">
