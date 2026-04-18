@@ -13,7 +13,7 @@ const tools = {
     desc: "The first popular JS testing framework",
     sample: `
   describe("A suite is just a function", function() {
-    it("and so is a spec", function() {
+    it("is the same with spec", function() {
       expect(myFunc()).toBe(true);
     })
   })
@@ -40,8 +40,8 @@ const tools = {
   Browserify: {
     year: 2011,
     desc: "The first node.js based bundler",
-    pro: "provided some shims for the builtin node modules",
-    con: "simple concat, only works with require calls",
+    pro: "provided browser shims for the builtin node modules",
+    con: "simple concat, only works with CommonJS (require)",
     sampleLang: 'bash',
     sample: `
       browserify main.js -o bundle.js
@@ -51,7 +51,7 @@ const tools = {
     year: 2012,
     desc: "The first purpose built js task runner",
     pro: "large plugin ecosystem",
-    con: "verbose JSON config",
+    con: "verbose and rigid JSON config",
     sample: `
   grunt.initConfig({
     concat: { /* concat config */ },
@@ -64,7 +64,7 @@ const tools = {
     year: 2012,
     desc: "still the most popular build tool",
     pro: 'code splitting & lazy loading',
-    con: 'slower build times',
+    con: 'slow build times, hard to configure',
     sample: `
   {
     entry: './src/index.tsx',
@@ -84,7 +84,7 @@ const tools = {
     year: 2012,
     desc: 'the most helpful but annoying linter',
     pro: 'you can use types in your javascript',
-    con: 'you have to use types in your javascript',
+    con: 'I have to use types in my javascript',
     sampleLang: 'TypeScript',
     sample: `
   type LightSwitchConfig = { on: boolean; off: boolean; toggle: () => void };
@@ -178,10 +178,10 @@ const tools = {
     year: 2017,
     desc: "Some tools don't last, but they pave the way",
     pro: 'zero configuration out-of-box',
-    con: 'smaller ecosystem',
+    con: 'harder to extend, smaller ecosystem',
     sample: `
   {
-    /* not needed in the majority of cases */
+    /* even this not needed in the majority of cases */
     "extends": "@parcel/config-default",
   }`
   },
@@ -247,7 +247,7 @@ const packageMngrs = {
   pnpm: {
     year: 2016,
     desc: 'an even better package manager',
-    pro: 'dependency deduplication, even faster',
+    pro: 'dependency deduplication, even faster than yarn',
     con: 'compatiblity & symlinks issues'
   }
 } as Record<string, toolDef>;

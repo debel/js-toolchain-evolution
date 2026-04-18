@@ -12,8 +12,12 @@
     "@fontsource-variable/ibm-plex-sans": "^5.2.8",
     "@fontsource/ibm-plex-mono": "^5.2.7",
     "@tailwindcss/vite": "^4.1.14",
-    "astro": "^5.14.5",
+    "astro": "^6.1.6",
     "reveal.js": "^5.2.1",
     "tailwindcss": "^4.1.14"
+  },
+  "devDependencies": {
+    "prettier": "^3.8.3",
+    "prettier-plugin-astro": "^0.14.1"
   }
 }
